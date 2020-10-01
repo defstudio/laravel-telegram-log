@@ -48,18 +48,20 @@ class TelegramLoggerHandler extends AbstractProcessingHandler
         $log_level = $log['level_name'];
         $text .= "<b>Log Level:</b> <code>$log_level</code>" . PHP_EOL;
 
+        $message = $log['message'];
+        $text .= "<b>Message:</b> <pre>$message</pre>" . PHP_EOL;
+
+
+        if (!empty($formatted = $log['formatted'])) {
+            $formatted = json_encode($formatted);
+            $text .= "<b>Details:</b> <code>$formatted</code>" . PHP_EOL;
+        }
+
         if (!empty($extra = $log['extra'])) {
             $extra = json_encode($extra);
             $text .= "<b>Extra:</b> <code>$extra</code>" . PHP_EOL;
         }
 
-        if (!empty($context = $log['context'])) {
-            $context = json_encode($context);
-            $text .= "<b>Context:</b> <code>$context</code>" . PHP_EOL;
-        }
-
-        $message = $log['message'];
-        $text .= "<b>Message:</b> <pre>$message</pre>" . PHP_EOL;
 
         return $text;
     }
