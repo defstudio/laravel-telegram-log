@@ -27,9 +27,6 @@ class TelegramLoggerHandler extends AbstractProcessingHandler
         $this->application_environment = config('app.env');
         $this->application_url = config('app.url');
 
-        $telegram_bot_token = config('laravel-telegram-log.bot_token');
-        $telegram_chat_id = config('laravel-telegram-log.chat_id');
-
         $this->telegram_service = new TelegramService($telegram_bot_token, $telegram_chat_id);
     }
 
