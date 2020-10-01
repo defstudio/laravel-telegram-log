@@ -53,8 +53,7 @@ class TelegramLoggerHandler extends AbstractProcessingHandler
 
 
         if (!empty($formatted = $log['formatted'])) {
-            $formatted = json_encode($formatted);
-            $text .= "<b>Details:</b> <code>$formatted</code>" . PHP_EOL;
+            $text .= "<b>Details:</b> <pre>$formatted</pre>" . PHP_EOL;
         }
 
         if (!empty($extra = $log['extra'])) {
