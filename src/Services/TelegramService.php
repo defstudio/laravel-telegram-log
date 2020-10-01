@@ -5,7 +5,6 @@ namespace Defstudio\LaravelTelegramLog\Services;
 
 
 use Exception;
-use Illuminate\Support\Facades\Log;
 
 class TelegramService
 {
@@ -33,13 +32,6 @@ class TelegramService
         $this->telegram_bot_token = $telegram_bot_token;
         $this->telegram_chat_id = $telegram_chat_id;
 
-        if (empty($telegram_bot_token)) {
-            Log::emergency('[Telegram Log] missing TELEGRAM_BOT_TOKEN .env key');
-        }
-
-        if (empty($telegram_chat_id)) {
-            Log::emergency('[Telegram Log] missing TELEGRAM_CHAT_ID .env key');
-        }
     }
 
     public function send_message(string $message): string
