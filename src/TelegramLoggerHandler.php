@@ -55,7 +55,7 @@ class TelegramLoggerHandler extends AbstractProcessingHandler
 
         if (!empty($context = $log['context'])) {
             $context = json_encode($context);
-            $text .= "<b>Extra:</b> <code>$context</code>" . PHP_EOL;
+            $text .= "<b>Context:</b> <code>$context</code>" . PHP_EOL;
         }
 
         $message = $log['message'];
