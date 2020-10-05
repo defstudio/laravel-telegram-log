@@ -29,6 +29,7 @@ class TelegramService
 
         $this->telegram_api_base_url = 'https://api.telegram.org/bot';
         $this->telegram_api_send_message_endpoint = 'sendMessage';
+
         $this->telegram_bot_token = $telegram_bot_token;
         $this->telegram_chat_id = $telegram_chat_id;
 
