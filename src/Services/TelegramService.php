@@ -67,6 +67,6 @@ class TelegramService
 
     private function get_response_from_status_code($status_code): ?string
     {
-        return self::RESPONSE_MESSAGES[$status_code] ?? null;
+        return self::RESPONSE_MESSAGES[$status_code] ?? 'Error';
     }
 }
