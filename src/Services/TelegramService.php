@@ -37,6 +37,10 @@ class TelegramService
 
     public function send_message(string $message): string
     {
+        if(empty($this->telegram_bot_token) || empty($this->telegram_chat_id)){
+            return "";
+        }
+        
         $url = $this->telegram_api_base_url . $this->telegram_bot_token . '/' . $this->telegram_api_send_message_endpoint;
         $query = $this->prepare_query($message);
 
